@@ -1,4 +1,18 @@
-Find the most active people on a given GitHub repo. The way this works is that it fetches all the issues and pull requests via the GitHub API and all comments for each of them, and counts how many times each person commented. The script can take quite a long time to finish.
+This script finds the most active people on a given GitHub repo. It fetches all the issues and pull requests via the GitHub API and all comments for each of them, and counts how many times each person commented. It reports progress and every `n` steps prints a summary like:
+
+    Top 10 for most recent 100 issues:
+    {
+      "facebook-github-bot": 134,
+      "bestander": 28,
+      "brentvatne": 26,
+      "mkonicek": 26,
+      "satya164": 24,
+      "martinbigio": 17,
+      "ide": 17,
+      "aleclarson": 16,
+      "skevy": 14,
+      "davidaurelio": 12,
+    }
 
 To use this script, simply run:
 
@@ -10,8 +24,8 @@ Note that you'll almost immediately get blocked because of exceeding the API rat
 
 To get a higher limit you need to use authenticated requests. Luckily, you can simply generate access an access token for command line use. **Important:** Do this with a user that doesn't have push access or anything in case you leak the token. If you have push access to the repo just register a new dummy GitHub user and get the token for that user.
 
-- Go to https://github.com/settings/tokens/new
-- Generate the token, set an env variable: `export STATS_GITHUB_ACCESS_TOKEN=YOUR_TOKEN`. This is the last time you've seen the token.
+- Go to https://github.com/settings/tokens/new, generate a token and copy it to clipboard
+- Set an env variable: `export STATS_GITHUB_ACCESS_TOKEN=YOUR_TOKEN`
 
 Check that the token works:
 
