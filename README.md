@@ -1,3 +1,5 @@
+This is based on Brent Vatne's [react-native-issue](https://github.com/brentvatne/react-native-issues).
+
 This script finds the most active people on a given GitHub repo. It fetches all the issues and pull requests via the GitHub API and all comments for each of them, and counts how many times each person commented. It reports progress and every `n` steps prints a summary like:
 
     Top 10 for most recent 100 issues:
@@ -22,7 +24,7 @@ Note that you'll almost immediately get blocked because of exceeding the API rat
 
     curl -i https://api.github.com/users/whatever
 
-To get a higher limit you need to use authenticated requests. Luckily, you can simply generate access an access token for command line use. **Important:** Do this with a user that doesn't have push access or anything in case you leak the token. If you have push access to the repo just register a new dummy GitHub user and get the token for that user.
+To get a higher limit you need to use authenticated requests. Luckily, you can simply generate an access token for command line use. **Important:** Do this with a user that doesn't have push access or anything in case you leak the token. If you have push access to the repo just register a new dummy GitHub user and get the token for that user.
 
 - Go to https://github.com/settings/tokens/new, generate a token and copy it to clipboard
 - Set an env variable: `export STATS_GITHUB_ACCESS_TOKEN=YOUR_TOKEN`
